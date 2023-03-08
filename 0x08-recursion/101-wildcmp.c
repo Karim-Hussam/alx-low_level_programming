@@ -42,10 +42,10 @@ int strlen_no_wilds(char *str)
 
 void iterate_wild(char **wildstr)
 {
-        if (**wildstr == '*')
+	if (**wildstr == '*')
         {
-                (*wildstr)++;
-                iterate_wild(wildstr);
+		(*wildstr)++;
+		iterate_wild(wildstr);
 	}
 }
 
@@ -67,7 +67,7 @@ char *postfix_match(char *str, char *postfix)
 
         if (*postfix == '*')
                 iterate_wild(&postfix);
-	
+
         if (*(str + str_len - postfix_len) == *postfix && *postfix != '\0')
         {
                 postfix++;
